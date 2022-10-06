@@ -1,0 +1,179 @@
+:root {
+    --fuenteHeading: 'PT Sans',sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --primario: #8c4c33;
+    --gris: #E1E1E1;
+    --blanco: #fff;
+    --negro: #000;
+}
+
+html {
+    box-sizing:border-box;/*Esto hace que ni el border, ni padding alteren el ancho de demas elementos. */
+    font-size: 62.5%;       /*es para que 1rem equivalga a 10px*/
+}
+
+*,*:before,*:after {
+    box-sizing: inherit;/*inherit quiere decir que heredara lo mismo que el padre, osea html {}*/
+}
+
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    line-height: 2;
+}
+
+/**Globales**/
+.contenedor {
+    max-width: 120rem;
+    width: 90%; /*ancho 90%*/
+    margin: 0 auto; /*Centrar el contenido horizontalmente*/
+}
+
+a {text-decoration: none;}
+
+h1,h2,h3,h4 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1 {font-size:4.8rem;}
+
+h2 {font-size:4rem;}
+
+h3 {font-size:3.2rem;}
+
+h4 {font-size:2.8rem;}
+
+img {
+    max-width: 100%;
+}
+
+/***************************Utilidades***************************/
+.no-margin {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+.centrar-texto {
+    text-align: center;
+}
+.no-select {
+    user-select: none;
+}
+.sombra {
+    box-shadow: 0 0 10px 5px var(--gris);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.separador {
+    margin-bottom: 3rem;
+}
+.border-radius {
+    border-radius: 2rem;
+}
+/***************************Header***************************/
+.header {
+    background-image: url(../img/banner.jpg);
+    height: 30rem;
+    background-size: cover;/*para que abarque todo el espacio horizontal*/
+    background-image: no-repeat;/*para que la imagen no se repita*/
+    background-position: center center;/*para que se centre en toda resolucion (center en x, center en y)*/
+}
+
+.header__texto {
+    text-align: center;
+    color: var(--blanco);
+    margin-top:1rem;
+    font-size: .8rem;
+}
+        @media (min-width: 768px) {
+            .header__texto {
+                font-size:1.8rem;
+                margin-top:4rem;
+            }
+        }
+
+.header__texto h2{
+    font-size: 2rem;
+}   
+        @media (min-width: 768px) {
+            .header__texto h2{
+                font-size: 4rem;
+            }  
+        }
+
+.barra {
+    padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .barra {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+}
+
+.logo {
+    color: var(--blanco);
+}
+.logo__nombre {
+    font-weight: normal;
+}
+.logo__bold {
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        display: flex;
+        gap: 2rem;
+    }
+}
+
+.navegacion__enlace {
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
+
+/**INDEX-CONTENIDO**/
+
+@media (min-width: 768px) {
+    .contenido-principal {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2rem;
+        column-gap: 2rem;
+        text-align: center;
+    }
+}
+
+.imagen-blog-1 {
+    grid-column: 1 / 2;
+}
+
+.imagen-blog-2 {
+    grid-column: 2 / 3;
+}
+
+.entrada {
+    border-bottom: 2px solid var(--gris);
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type { /*para cambiar el ultimo elemento de entrada*/
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+/***FOOTER***/
+
+.footer {
+    background: var(--negro);
+    padding-bottom: 1rem;
+    margin-top: 3rem;
+}
